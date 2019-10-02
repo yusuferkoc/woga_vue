@@ -1,28 +1,87 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <div class="card" v-if="!mevcut"></div>
+    <div class="card-body">Butona</div>
+    <div class="card-footer">
+      <div class="btn btn-primary">başla</div>
+    </div>
+    <div class="card mt-25">
+      <div class="card-header">Soru</div>
+        <div class="card-body">
+          <div class="harf">
+            <span>X</span>
+          </div>
+          <div class="card-footer">İşlemler</div>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  components: {},
+  data() {
+    return{
+      sorular:[
+        {
+          soru:"siyahın eş anlamı",
+          cevap:"KARA",
+          soruldu:false
+        },
+        {
+          soru:"sık isim",
+          cevap:"AHMET",
+          soruldu:false
+        },
+        {
+          soru:"tr başkent",
+          cevap:"ANKARA",
+          soruldu:false
+        },
+        {
+          soru:"wizardddd ",
+          cevap:"saruman",
+          soruldu:false
+        }
+      ],
+    mevcut:null,
+    puan:0,
+    harfPuan:0
+    };
   }
+
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .harf{
+    width:100px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    
+    
+  }
+  .card-header{
+    width:100px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+
+  }
+  .card-footer{
+    width:100px;
+    height:100px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+
+  }
+
 </style>
+
